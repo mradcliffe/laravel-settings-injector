@@ -3,6 +3,7 @@
     "description": "Laravel Settings Injector",
     "type": "library",
     "license": "MIT",
+    "homepage": "https://github.com/mradcliffe/laravel-settings-injector",
     "authors": [
         {
             "name": "Matthew Radcliffe",
