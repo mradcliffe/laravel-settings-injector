@@ -1,0 +1,25 @@
+{
+    "name": "mradcliffe/laravel-settings-injector",
+    "description": "Laravel Settings Injector",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Matthew Radcliffe",
+            "email": "mradcliffe@softpixel.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Radcliffe\\LaravelSettingsInjector\\": "src",
+            "Radcliffe\\Tests\\LaravelSettingsInjector\\": "tests/src"
+        }
+    },
+    "minimum-stability": "stable",
+    "require-dev": {
+        "laravel/framework": "~5.3",
+        "phpspec/prophecy": "~1.6",
+        "phpunit/phpunit": "~4.8"
+    },
+    "require": {}
+}
