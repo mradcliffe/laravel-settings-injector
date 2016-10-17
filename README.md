@@ -1,5 +1,7 @@
 # Laravel Settings Injector
 
+[![Build Status](https://travis-ci.org/mradcliffe/laravel-settings-injector.svg?branch=master)](https://travis-ci.org/mradcliffe/laravel-settings-injector)
+
 laravel-settings-injector provides a bootstrapper replacement for the default LoadConfiguration bootstrapper from Laravel.
 
 This allows you to create a directory to manage settings from outside of the application directory with symlinks so that various environment-specific variables can be managed at a systems-level for production and other internal enviroments.

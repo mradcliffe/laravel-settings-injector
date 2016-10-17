@@ -11,7 +11,7 @@ use Symfony\Component\Finder\Finder;
  * Replaces Laravel's configuration loader.
  *
  * This allows to inject a settings file so that parameters can be used from
- * outside of the Laravel application root.7
+ * outside of the Laravel application root.
  */
 class LoadConfiguration extends LaravelLoadConfiguration
 {
