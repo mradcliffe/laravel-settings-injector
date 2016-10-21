@@ -1,0 +1,44 @@
+digraph G {
+	node [shape="rectangle", style="rounded, filled"];
+	edge [penwidth="3px", dir="none"];
+	rankdir = LR;
+	labelloc = t;
+	label = "Example Laravel Settings Injector Configuration";
+
+	subgraph cluster_c0 {
+	labelloc = t;
+		label = "Application Directory";
+
+		app [fillcolor="#fefeef"];
+		config;
+		public;
+		settings [fillcolor="#effeef"];
+		settingsPHP [label="settings.php", fillcolor="#effeef"];
+		appPHP [label="app.php", fillcolor="#fefeef"];
+		settingsPHPCode [label="<?php \l\n require_once 'includes/some_file.inc';\l\n", style="dashed"];
+		appPHPCode [label="<?php \l\n return \[\l\n  'APP_KEY' => env(APP_KEY, $parameters['app_key']),\l\n\];\l\n", style="dashed"];
+
+		settings -> settingsPHP;
+		settingsPHP -> settingsPHPCode [penwidth="1px"];
+
+		app -> appPHP;
+		appPHP -> appPHPCode [penwidth="1px"];
+	}
+
+	subgraph cluster_c1 {
+		label = "System-managed Directory";
+		labelloc = t;
+
+		some_fileCode [label="<?php \l\n $parameters = \[\l\n  'app_key' => 'blah',\l\n\];\l\n", style="dashed"];
+		some_file [label="some_file.inc", fillcolor="#feefef"];
+		includes [fillcolor="#feefef"];
+		anchor1 [shape="none", style="invis"];
+
+		includes -> some_file;
+		settings -> includes [label="\l\n\n\n symlink ", style="dashed"];
+		some_file -> some_fileCode [weight="-20", penwidth="1px"];
+		anchor1 -> includes [penwidth="0px"];
+
+		{rank=same; includes; settings; };
+	}
+}

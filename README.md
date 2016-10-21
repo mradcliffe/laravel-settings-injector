@@ -21,8 +21,10 @@ This is probably not useful for many installations of Laravel, however due to re
 
 ## Usage
 
+See `tests` directory for some example fixtures.
+
 1. Create a `settings` directory in app root.
-2. Do something at a systems-level to create `settings/settings.php` so that variables are created there.
+2. Provision files outside of the webroot, but required somehow by `settings/settings.php`. See image below.
 3. Use those variables as normal in `config/*.php` to configure your application.
 
-See `tests` directory for some example fixtures.
+![Example Configuration](https://raw.githubusercontent.com/mradcliffe/laravel-settings-injector/master/docs/example.png)
