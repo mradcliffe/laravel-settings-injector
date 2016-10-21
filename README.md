@@ -27,4 +27,4 @@ See `tests` directory for some example fixtures.
 2. Provision files outside of the webroot, but required somehow by `settings/settings.php`. See image below.
 3. Use those variables as normal in `config/*.php` to configure your application.
 
-![Example Configuration](https://raw.githubusercontent.com/mradcliffe/laravel-settings-injector/master/docs/example.png)
+![Example Configuration](docs/example.png?raw=true "Example Configuration")
