@@ -10,14 +10,16 @@ This is probably not useful for many installations of Laravel, however due to re
 
 ## Installation
 
-1. `composer config repositories.laravelsettingsinjector vcs https://github.com/mradcliffe/laravel-settings-injector.git`
-1. `composer require mradcliffe/laravel-settings-injector`
+```bash
+composer config repositories.laravelsettingsinjector vcs https://github.com/mradcliffe/laravel-settings-injector.git
+composer require mradcliffe/laravel-settings-injector
+```
 
 ## Configuration
 
 1. Modify `app/Http/Kernel.php`.
 2. Replace `\Illuminate\Foundation\Bootstrap\LoadConfiguration` with `\Radcliffe\LaravelSettingsInjector\Bootstrap\LoadConfiguration` either by modifying an existing `::$bootstrappers` protected variable or doing so within the `::bootstrappers()` method of that class.
-3. Modify 'app/Console/Kernel.php` and add `\Illuminate\Foundation\Console\Kernel::$bootstrappers` protected variables to there, and do the same replacement as in #2 above.
+3. Modify `app/Console/Kernel.php` and add `\Illuminate\Foundation\Console\Kernel::$bootstrappers` protected variables to there, and do the same replacement as in #2 above.
 
 ## Usage
 
