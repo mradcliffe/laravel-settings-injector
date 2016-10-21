@@ -28,7 +28,7 @@ class LoadConfiguration extends LaravelLoadConfiguration
 
         /** @var \Symfony\Component\Finder\SplFileInfo $file */
         foreach (Finder::create()->files()->name('settings.php')->in($settings_path) as $file) {
-            require_once $file->getRealPath();
+            require $file->getRealPath();
         }
 
         foreach ($this->getConfigurationFiles($app) as $key => $path) {

@@ -27,5 +27,7 @@ See `tests` directory for some example fixtures.
 1. Create a `settings` directory in app root.
 2. Provision files outside of the webroot, but required somehow by `settings/settings.php`. See image below.
 3. Use those variables as normal in `config/*.php` to configure your application.
+   * Note that any defines or requires could potentially happen more than once due to the way that Laravel works. Specifically `artisan config:cache` will load configuration after configuration has already been loaded so any use of `define` or `require` within `settings/settings.php` or any file it requires needs to take that into consideratino.
+
 
 ![Example Configuration](docs/example.png?raw=true "Example Configuration")
