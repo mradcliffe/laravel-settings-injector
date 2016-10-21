@@ -11,7 +11,6 @@ This is probably not useful for many installations of Laravel, however due to re
 ## Installation
 
 ```bash
-composer config repositories.laravelsettingsinjector vcs https://github.com/mradcliffe/laravel-settings-injector.git
 composer require mradcliffe/laravel-settings-injector
 ```
 
