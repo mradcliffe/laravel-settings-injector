@@ -18,9 +18,9 @@
     },
     "minimum-stability": "stable",
     "require-dev": {
-        "laravel/framework": "~5.3",
+        "laravel/framework": "~6",
         "phpspec/prophecy": "~1.6",
-        "phpunit/phpunit": "~4.8"
+        "phpunit/phpunit": "~8"
     },
     "require": {}
 }

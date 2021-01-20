@@ -4,14 +4,15 @@ namespace Radcliffe\Tests\LaravelSettingsInjector\Bootstrap;
 
 use Illuminate\Config\Repository;
 use Illuminate\Foundation\Application;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Test that configuration can use arbitrary variable.
  *
- * @coversDefaultClass Radcliffe\LaravelSettingsInjector\Bootstrap\LoadConfiguration
+ * @coversDefaultClass \Radcliffe\LaravelSettingsInjector\Bootstrap\LoadConfiguration
  * @group laravel-settings-injector
  */
-class LoadConfigurationTest extends \PHPUnit_Framework_TestCase
+class LoadConfigurationTest extends TestCase
 {
 
     /**
@@ -23,7 +24,10 @@ class LoadConfigurationTest extends \PHPUnit_Framework_TestCase
      * @var Illuminate\Filesystem\Filesystem
      */
 
-    protected function setUp()
+    /**
+     * {@inheritdoc}
+     */
+    protected function setUp(): void
     {
         $base_path = __DIR__ . DIRECTORY_SEPARATOR . '../../fixtures';
 
@@ -44,7 +48,7 @@ class LoadConfigurationTest extends \PHPUnit_Framework_TestCase
             'Radcliffe\LaravelSettingsInjector\Bootstrap\LoadConfiguration',
         ]);
 
-        $this->assertEquals($this->app['config']->get('test.name'), 'test_value');
-        $this->assertEquals($this->app['config']->get('app.name'), 'Not Laravel');
+        $this->assertEquals('test_value', $this->app['config']->get('test.name'));
+        $this->assertEquals('Not Laravel', $this->app['config']->get('app.name') );
     }
 }
